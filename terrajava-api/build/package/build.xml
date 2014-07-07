@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="terrajava-api" basedir="." default="main">
+	
+	<property name="output.dir" value="lib" />
+	<property name="cpp.workspace.dir" value="../../../../workspace-cpp-x64" />
+	<property name="terralib.dir" value="${cpp.workspace.dir}/terralib/Release/linux-g++" />
+	<property name="terraogc.dir" value="${cpp.workspace.dir}/terraogc/lib" />
+	<property name="terralib.version" value="4.0.0" />
+	<property name="terraogc.version" value="1.0.0" />
+	
+	<target name="main" depends="clean, copy-terralib, copy-terraogc, copy-terramanager, copy-terrajava" description="Main target">
+	</target>
+	
+	<target name="clean">
+		<echo>
+            Cleaning output directory
+        </echo>
+	    <delete dir="${output.dir}"/>
+		<mkdir dir="${output.dir}"/>
+	</target>
+	
+	<target name="copy-terralib" description="Copy TerraLib">
+		<echo>
+            Copying TerraLib
+		</echo>
+		<copy file="${terralib.dir}/libdxf.so.${terralib.version}" tofile="${output.dir}/libdxf.so.4" />
+		<copy file="${terralib.dir}/libkmlParser.so.1.0.0" tofile="${output.dir}/libkmlParser.so.1" />
+		<copy file="${terralib.dir}/libshapelib.so.${terralib.version}" tofile="${output.dir}/libshapelib.so.4" />
+		<copy file="${terralib.dir}/libshapelib.so.${terralib.version}" tofile="${output.dir}/libshapelib.so.4" />
+		<copy file="${terralib.dir}/libte_dxf.so.${terralib.version}" tofile="${output.dir}/libte_dxf.so.4" />
+		<copy file="${terralib.dir}/libte_firebird.so.${terralib.version}" tofile="${output.dir}/libte_firebird.so.4" />
+		<copy file="${terralib.dir}/libte_functions.so.${terralib.version}" tofile="${output.dir}/libte_functions.so.4" />
+		<copy file="${terralib.dir}/libte_mysql.so.${terralib.version}" tofile="${output.dir}/libte_mysql.so.4" />
+		<copy file="${terralib.dir}/libte_oracle.so.${terralib.version}" tofile="${output.dir}/libte_oracle.so.4" />
+		<copy file="${terralib.dir}/libte_postgresql.so.${terralib.version}" tofile="${output.dir}/libte_postgresql.so.4" />
+		<copy file="${terralib.dir}/libterralib.so.${terralib.version}" tofile="${output.dir}/libterralib.so.4" />
+		<copy file="${terralib.dir}/libterralibtiff.so.${terralib.version}" tofile="${output.dir}/libterralibtiff.so.4" />
+		<copy file="${terralib.dir}/libte_shapelib.so.${terralib.version}" tofile="${output.dir}/libte_shapelib.so.4" />
+		<copy file="${terralib.dir}/libte_utils.so.${terralib.version}" tofile="${output.dir}/libte_utils.so.4" />
+	</target> 
+	
+	<target name="copy-terraogc" description="Copy TerraOGC">
+			<echo>
+	            Copying TerraOGC
+			</echo>
+		<copy file="${terraogc.dir}/libterraogccommon.so.${terraogc.version}" tofile="${output.dir}/libterraogccommon.so.1" />
+		<copy file="${terraogc.dir}/libterraogcfilter.so.${terraogc.version}" tofile="${output.dir}/libterraogcfilter.so.1" />
+		<copy file="${terraogc.dir}/libterraogcgml.so.${terraogc.version}" tofile="${output.dir}/libterraogcgml.so.1" />
+		<copy file="${terraogc.dir}/libterraogcows.so.${terraogc.version}" tofile="${output.dir}/libterraogcows.so.1" />
+		<copy file="${terraogc.dir}/libterraogcse.so.${terraogc.version}" tofile="${output.dir}/libterraogcse.so.1" />
+		<copy file="${terraogc.dir}/libterraogcsld.so.${terraogc.version}" tofile="${output.dir}/libterraogcsld.so.1" />
+		<copy file="${terraogc.dir}/libterraogcwms.so.${terraogc.version}" tofile="${output.dir}/libterraogcwms.so.1" />
+		<copy file="${terraogc.dir}/libterraogcxacml.so.${terraogc.version}" tofile="${output.dir}/libterraogcxacml.so.1" />
+		<copy file="${terraogc.dir}/libterraogcxml.so.${terraogc.version}" tofile="${output.dir}/libterraogcxml.so.1" />
+		<copy file="${terraogc.dir}/libterraogcxsd.so.${terraogc.version}" tofile="${output.dir}/libterraogcxsd.so.1" />
+
+	</target> 
+	
+	<target name="copy-terramanager" description="Copy TerraManager">
+			<echo>
+	            Copying TerraManager
+			</echo>
+		<copy file="${terralib.dir}/libterramanager.so.1.0.0" tofile="${output.dir}/libterramanager.so.1" />
+	</target> 
+	
+	<target name="copy-terrajava" description="Copy TerraJava">
+			<echo>
+	            Copying TerraJava
+			</echo>
+		<copy file="${terralib.dir}/libterrajava.so.1.0.0" tofile="${output.dir}/libterrajava.so" />
+	</target>
+		
+</project>
