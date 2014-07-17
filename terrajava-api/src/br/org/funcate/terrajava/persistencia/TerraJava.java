@@ -895,7 +895,8 @@ public class TerraJava {
 	 * </pre>
 	 * 
 	 */
-	@SuppressWarnings("unchecked")
+	
+	@SuppressWarnings("rawtypes")
 	public native Vector<HashMap> drawCurrentTheme(String sessionId)
 			throws IllegalAccessException, InstantiationException;
 
@@ -2960,7 +2961,8 @@ public class TerraJava {
 	 * @return Verdadeiro (true) se foi poss�vel realizar a importa��o e falso
 	 *         (false) caso contr�rio.
 	 */
-	@SuppressWarnings("unchecked")
+	
+	@SuppressWarnings("rawtypes")
 	public native boolean importShape(String filePath, String layerName,
 			HashMap projectionMap, String linkName, String attrTableName,
 			String sessionId) throws IllegalAccessException,
@@ -3022,7 +3024,8 @@ public class TerraJava {
 	 * [10] String datum A elipsoide para a proje��o do dado.
 	 * </pre>
 	 */
-	@SuppressWarnings("unchecked")
+	
+	@SuppressWarnings("rawtypes")
 	public native HashMap loadProjectionFromShape(String filePath,
 			String sessionId) throws IllegalAccessException,
 			InstantiationException;
